@@ -1,0 +1,8 @@
+.vs/
+XamarinApp.sln
+/XamarinApp/XamarinApp.iOS/bin
+/XamarinApp/XamarinApp.iOS/obj
+/XamarinApp/XamarinApp/bin
+/XamarinApp/XamarinApp/obj
+/XamarinApp/XamarinApp.Android/bin
+/XamarinApp/XamarinApp.Android/obj
