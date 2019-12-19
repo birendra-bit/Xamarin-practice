@@ -4,8 +4,8 @@
              xmlns:local="clr-namespace:XamarinApp"
              x:Class="XamarinApp.MainPage">
 
-    <StackLayout Margin="20,35,20,25" BackgroundColor="BlueViolet">
-        <Grid Margin="20,35,20,20">
+    <StackLayout>
+        <!--<Grid Margin="20,35,20,20" Padding="10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="0.5*" />
                 <ColumnDefinition Width="0.5*" />
@@ -24,16 +24,59 @@
            Text="Column 1, Row 1" />
         </Grid>
         <Button Text="Click Me" 
-                BackgroundColor="Blue" 
+                BackgroundColor="Blue"
                 Clicked="OnButtonClicked" 
                 BorderColor="Black"
                 WidthRequest="200"
                 HeightRequest="50"
         />
         <Entry 
-            Placeholder="enter your name"
+            Placeholder="enter name"
             TextChanged="OnEntryTextChanged"
         />
+        <Editor Placeholder="enter multiple lines" HeightRequest="100" />
+        <Image Source="download.jpg"
+               Aspect="Fill"
+               WidthRequest="300"
+               HeightRequest="300"
+               HorizontalOptions="Center"
+               />-->
+        <ListView ItemsSource="{Binding Person}"
+                  HasUnevenRows="true">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Margin="20,35,20,20" Padding="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions >
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.RowSpan="3"
+                                   Source="{Binding ImageUrl}"
+                                   Aspect="AspectFill"
+                                   />
+                            <Label Grid.Column="1"
+                                   Grid.Row="0"
+                                   Text="{Binding Name}" />
+                            <Label Grid.Column="1"
+                                   Grid.Row="1"
+                                   Text="{Binding  Designation}" />
+                            <Label Grid.Column="1"
+                                   Grid.Row="2"
+                                   Text="{Binding DateOfJoining}" />
+                            <Label Grid.ColumnSpan="2"
+                                   Grid.Row="3"
+                                   Text="{Binding Description}"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </StackLayout>
-
 </ContentPage>
